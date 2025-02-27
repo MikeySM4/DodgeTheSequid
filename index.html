@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dodge the Fall</title>
+  <style>
+    /* Basic reset */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      background-color: #f0f0f0;
+      text-align: center;
+      font-family: Arial, sans-serif;
+    }
+    #timer {
+      position: absolute;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 24px;
+      color: #333;
+    }
+    /* 
+      We set the canvas display size in CSS (width/height). 
+      We'll match this in JS so it scales to any screen. 
+    */
+    #gameCanvas {
+      border: 1px solid #000;
+      display: block;
+      margin: 50px auto 0;
+      /* 
+        90vw wide, 4:3 aspect ratio = height = 90vw * 0.75 
+        We also clamp the max size so it’s not huge on desktop. 
+      */
+      width: 90vw;
+      height: calc(90vw * 0.75);
+      max-width: 600px;
+      max-height: 450px;
+    }
+  </style>
+</head>
+<body>
+  <div id="timer">30</div>
+  <canvas id="gameCanvas"></canvas>
+  <script src="game.js"></script>
+</body>
+</html>
