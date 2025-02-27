@@ -37,10 +37,12 @@
         We also clamp the max size so it’s not huge on desktop. 
       */
       width: 90vw;
-      height: calc(90vw * 0.75);
-      max-width: 600px;
-      max-height: 450px;
-    }
+  height: 80vh;
+
+  /* Let it expand up to these limits on bigger screens */
+  max-width: 600px;
+  max-height: 800px;
+}
   </style>
 </head>
 <body>
