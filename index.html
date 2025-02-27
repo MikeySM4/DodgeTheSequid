@@ -12,9 +12,12 @@
       padding: 0;
     }
     body {
-      background-color: #f0f0f0;
-      text-align: center;
-      font-family: Arial, sans-serif;
+      margin: 0;
+  text-align: center;
+  font-family: Arial, sans-serif;
+
+  /* Example gradient from light gray to a soft blue */
+  background: linear-gradient(to bottom, #f0f0f0, #eb4444);
     }
     #timer {
       position: absolute;
@@ -29,19 +32,21 @@
       We'll match this in JS so it scales to any screen. 
     */
     #gameCanvas {
-      border: 1px solid #000;
-      display: block;
-      margin: 50px auto 0;
-      /* 
-        90vw wide, 4:3 aspect ratio = height = 90vw * 0.75 
-        We also clamp the max size so it’s not huge on desktop. 
-      */
-      width: 90vw;
+  border: 1px solid #000;
+  display: block;
+  margin: 50px auto 0;
+  width: 90vw;
   height: 80vh;
-
-  /* Let it expand up to these limits on bigger screens */
   max-width: 600px;
-  max-height: 800px;
+  max-height: 800px; /* This works on desktops */
+}
+
+/* For smaller screens, remove the max-height constraint */
+@media (max-width: 600px) {
+  #gameCanvas {
+    max-width: 100%;
+    max-height: none;
+  }
 }
   </style>
 </head>
